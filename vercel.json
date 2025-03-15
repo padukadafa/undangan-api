@@ -6,17 +6,6 @@
             "maxDuration": 10
         }
     },
-    "headers": [
-        {
-            "source": "/api/(.*)",
-            "headers": [
-                {
-                    "key": "Access-Control-Allow-Origin",
-                    "value": "*"
-                }
-            ]
-        }
-    ],
     "routes": [
         {
             "src": "/favicon.ico",
@@ -48,6 +37,9 @@
         },
         {
             "src": "/(.*)",
+            "headers": {
+                "Access-Control-Allow-Origin": "*"
+            },
             "dest": "/api/index.php"
         }
     ]
